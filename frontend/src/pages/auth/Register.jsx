@@ -52,7 +52,7 @@ export default function Register() {
     setError(null);
     try {
       const { data } = await axios.post(
-        "http://localhost:5559/users/register",
+        "http://localhost:8080/auth/auth/register",
         formData
       );
       if (!data.success) throw new Error(data.message);

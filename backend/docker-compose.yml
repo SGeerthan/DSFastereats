@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+
+  auth-service:
+    build: ./todo-service
+    ports:
+      - '5000:5000'
+    depends_on:
+      - mongo
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - '8080:8080'
+    depends_on:
+      - auth-service
+
